@@ -28,8 +28,8 @@ export const Partner: React.FC<PartnerBlock> = ({ Partner }) => {
                 <div
                     ref={prevRef}
                     className="absolute left-4 z-50 flex items-center justify-center
-        w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer
-        hover:scale-110 transition-transform"
+                        w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer
+                           hover:scale-110 transition-transform"
                     aria-label="Previous slide"
                 >
                     <svg width="20" height="20" viewBox="0 0 24 24">
@@ -48,8 +48,8 @@ export const Partner: React.FC<PartnerBlock> = ({ Partner }) => {
                 <div
                     ref={nextRef}
                     className="absolute right-4 z-50 flex items-center justify-center
-        w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer
-        hover:scale-110 transition-transform"
+                          w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer
+                    hover:scale-110 transition-transform"
                     aria-label="Next slide"
                 >
                     <svg width="20" height="20" viewBox="0 0 24 24">

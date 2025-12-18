@@ -212,6 +212,9 @@ export interface Page {
     | Slider
     | Partner
     | Faq
+    | Conten
+    | Down
+    | Head
   )[];
   meta?: {
     title?: string | null;
@@ -925,6 +928,87 @@ export interface Faq {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "conten".
+ */
+export interface Conten {
+  cards?:
+    | {
+        title: string;
+        Paragraph: string;
+        AuthorName?: string | null;
+        logo: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'conten';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "down".
+ */
+export interface Down {
+  contact?: {
+    companyName?: string | null;
+    street?: string | null;
+    zipCity?: string | null;
+    country?: string | null;
+    email?: string | null;
+    phone?: string | null;
+  };
+  officeHourse?:
+    | {
+        days?: string | null;
+        time?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  navigation?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  legalLinks?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  socialMedia?:
+    | {
+        icon: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'down';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "head".
+ */
+export interface Head {
+  logo: number | Media;
+  Navigation?:
+    | {
+        label: string;
+        linkType?: ('reference' | 'custom') | null;
+        page?: (number | null) | Page;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'head';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1237,6 +1321,9 @@ export interface PagesSelect<T extends boolean = true> {
         slider?: T | SliderSelect<T>;
         partner?: T | PartnerSelect<T>;
         faq?: T | FaqSelect<T>;
+        conten?: T | ContenSelect<T>;
+        down?: T | DownSelect<T>;
+        head?: T | HeadSelect<T>;
       };
   meta?:
     | T
@@ -1415,6 +1502,86 @@ export interface FaqSelect<T extends boolean = true> {
     | {
         Question?: T;
         richText?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "conten_select".
+ */
+export interface ContenSelect<T extends boolean = true> {
+  cards?:
+    | T
+    | {
+        title?: T;
+        Paragraph?: T;
+        AuthorName?: T;
+        logo?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "down_select".
+ */
+export interface DownSelect<T extends boolean = true> {
+  contact?:
+    | T
+    | {
+        companyName?: T;
+        street?: T;
+        zipCity?: T;
+        country?: T;
+        email?: T;
+        phone?: T;
+      };
+  officeHourse?:
+    | T
+    | {
+        days?: T;
+        time?: T;
+        id?: T;
+      };
+  navigation?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  legalLinks?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  socialMedia?:
+    | T
+    | {
+        icon?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "head_select".
+ */
+export interface HeadSelect<T extends boolean = true> {
+  logo?: T;
+  Navigation?:
+    | T
+    | {
+        label?: T;
+        linkType?: T;
+        page?: T;
+        url?: T;
         id?: T;
       };
   id?: T;

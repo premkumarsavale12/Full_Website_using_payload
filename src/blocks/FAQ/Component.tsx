@@ -11,7 +11,7 @@ interface FAQProps {
 
 export const FAQ: React.FC<FAQProps> = ({ items = [], Heading }) => {
 
-    console.log(items);
+    // console.log(items);
 
     return (
 

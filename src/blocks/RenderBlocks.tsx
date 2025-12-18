@@ -12,7 +12,11 @@ import { VideoBlock } from '@/blocks/VideoBlock/Component'
 import { Right } from '@/blocks/Right/Component'
 import { Slider } from '@/blocks/Slider/Component'
 import { Partner } from '@/blocks/Partner/Component'
-import { FAQ }  from '@/blocks/FAQ/Component'
+import { FAQ } from '@/blocks/FAQ/Component'
+import { Conten } from '@/blocks/Conten/Component'
+import { Down } from '@/blocks/Down/Component'
+import { Head } from '@/blocks/Head/Component'
+
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -25,7 +29,11 @@ const blockComponents = {
   right: Right,
   slider: Slider,
   partner: Partner,
-    faq :FAQ
+  faq: FAQ,
+  conten: Conten,
+  down: Down,
+  head: Head
+
 }
 
 export const RenderBlocks: React.FC<{
@@ -47,7 +55,7 @@ export const RenderBlocks: React.FC<{
             if (Block) {
               return (
                 <div className="my-16" key={index}>
-           
+
                   <Block {...block} disableInnerContainer />
                 </div>
               )

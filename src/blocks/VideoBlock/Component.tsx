@@ -26,7 +26,7 @@ export const VideoBlock: React.FC<VideoBlockProps> = ({ Video, richText, Paragra
     return (
 
         <>
-            <div className="relative video-wrapper -mt-[130px]">
+            <div className="relative video-wrapper -mt-[70px]">
                 <video
                     autoPlay
                     loop

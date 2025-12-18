@@ -18,6 +18,10 @@ import { Right } from '../../blocks/Right/config'
 import { Slider } from '../../blocks/Slider/config'
 import { Partner } from '../../blocks/Partner/config'
 import { FAQ } from '../../blocks/FAQ/config'
+import { Conten } from '../../blocks/Conten/config'
+import { Down } from '../../blocks/Down/config'
+import { Head } from '../../blocks/Head/config'
+
 
 
 import {
@@ -77,7 +81,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, MediBlock, VideoBlock, Right, Slider, Partner, FAQ],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, MediBlock, VideoBlock, Right, Slider, Partner, FAQ, Conten, Down, Head],
               required: true,
               admin: {
                 initCollapsed: true,
@@ -139,3 +143,5 @@ export const Pages: CollectionConfig<'pages'> = {
     maxPerDoc: 50,
   },
 }
+
+
