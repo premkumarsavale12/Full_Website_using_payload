@@ -12,6 +12,13 @@ import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
+import { MediBlock } from '../../blocks/MediBlock/config'
+import { VideoBlock } from '../../blocks/VideoBlock/config'
+import { Right } from '../../blocks/Right/config'
+import { Slider } from '../../blocks/Slider/config'
+import { Partner } from '../../blocks/Partner/config'
+import { FAQ } from '../../blocks/FAQ/config'
+
 
 import {
   MetaDescriptionField,
@@ -29,9 +36,7 @@ export const Pages: CollectionConfig<'pages'> = {
     read: authenticatedOrPublished,
     update: authenticated,
   },
-  // This config controls what's populated by default when a page is referenced
-  // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
-  // Type safe if the collection slug generic is passed to `CollectionConfig` - `CollectionConfig<'pages'>
+
   defaultPopulate: {
     title: true,
     slug: true,
@@ -72,7 +77,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, MediBlock, VideoBlock, Right, Slider, Partner, FAQ],
               required: true,
               admin: {
                 initCollapsed: true,

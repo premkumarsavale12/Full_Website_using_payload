@@ -16,18 +16,25 @@ export const CallToAction: Block = {
     {
       name: 'richText',
       type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
       label: false,
+      // defaultFeatures
+      editor: lexicalEditor({
+        features: ({ rootFeatures }) => [
+
+          ...rootFeatures,
+
+
+          HeadingFeature({
+            enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'],
+          }),
+
+
+          FixedToolbarFeature(),
+          InlineToolbarFeature(),
+        ],
+      }),
     },
+
     linkGroup({
       appearances: ['default', 'outline'],
       overrides: {
@@ -35,6 +42,7 @@ export const CallToAction: Block = {
       },
     }),
   ],
+
   labels: {
     plural: 'Calls to Action',
     singular: 'Call to Action',
