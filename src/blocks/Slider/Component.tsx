@@ -13,6 +13,7 @@ interface SliderProps {
         Images: string | Media;
         id?: string | null;
         richText?: any;
+        pageURL: string;
     }[]
 }
 
@@ -24,15 +25,15 @@ export const Slider: React.FC<SliderProps> = ({ media = [] }) => {
             <div className="relative max-w-[1200px] mx-auto h-[400px]">
 
 
-                <div className="custom-prev absolute left-4 top-1/2 -translate-y-1/2 
-                  bg-white text-black w-12 h-12 flex items-center justify-center
+                <div className="custom-prev absolute  -ml-[70px] top-1/2 -translate-y-1/2 
+                  bg-blue-500 text-black w-12 h-12 flex items-center justify-center
                   rounded-full shadow-lg cursor-pointer
                   hover:scale-110 transition-transform duration-200 z-50">
                     ◀
                 </div>
 
-                <div className="custom-next absolute right-4 top-1/2 -translate-y-1/2 
-                  bg-white text-black w-12 h-12 flex items-center justify-center
+                <div className="custom-next absolute -mr-[80px] right-4 top-1/2 -translate-y-1/2 
+                  bg-blue-500 text-black w-12 h-12 flex items-center justify-center
                   rounded-full shadow-lg cursor-pointer
                   hover:scale-110 transition-transform duration-200 z-50">
                     ▶
@@ -56,7 +57,9 @@ export const Slider: React.FC<SliderProps> = ({ media = [] }) => {
                         if (image && typeof image === "object" && "url" in image && image.url) {
                             return (
                                 <SwiperSlide key={item.id ?? index}>
-                                    <div className="w-full h-full rounded-xl overflow-hidden relative group">
+                                    <div
+                                        onClick={() => window.open(item.pageURL, '_blank')}
+                                        className="w-full h-full rounded-xl overflow-hidden relative group cursor-pointer">
                                         <img
                                             src={image.url}
                                             alt={image.alt || "Slider Image"}

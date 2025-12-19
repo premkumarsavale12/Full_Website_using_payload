@@ -27,8 +27,8 @@ export const Partner: React.FC<PartnerBlock> = ({ Partner }) => {
                 {/* Previous Button */}
                 <div
                     ref={prevRef}
-                    className="absolute left-4 z-50 flex items-center justify-center
-                        w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer
+                    className="absolute left-4 z-50 -ml-[100px]  flex items-center justify-center
+                        w-12 h-12 rounded-full bg-blue-400   text-white  shadow-lg cursor-pointer
                            hover:scale-110 transition-transform"
                     aria-label="Previous slide"
                 >
@@ -47,8 +47,8 @@ export const Partner: React.FC<PartnerBlock> = ({ Partner }) => {
                 {/* Next Button */}
                 <div
                     ref={nextRef}
-                    className="absolute right-4 z-50 flex items-center justify-center
-                          w-12 h-12 rounded-full bg-white shadow-lg cursor-pointer
+                    className="absolute right-4 z-50 -mr-[100px]  flex items-center justify-center
+                          w-12 h-12 rounded-full bg-blue-400 text-white shadow-lg cursor-pointer
                     hover:scale-110 transition-transform"
                     aria-label="Next slide"
                 >

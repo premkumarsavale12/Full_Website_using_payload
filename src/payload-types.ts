@@ -873,6 +873,7 @@ export interface Slider {
   media?:
     | {
         Images: number | Media;
+        pageURL?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -1472,6 +1473,7 @@ export interface SliderSelect<T extends boolean = true> {
     | T
     | {
         Images?: T;
+        pageURL?: T;
         id?: T;
       };
   id?: T;

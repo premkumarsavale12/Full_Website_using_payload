@@ -25,9 +25,17 @@ export const Slider: Block = {
           relationTo: 'media',
           required: true
         },
+        {
+          name: 'pageURL',
+          type: 'text',
+          label: 'Open Page URL',
+          // required: true,
+        },
 
       ]
 
     }
+
+
   ]
 }
