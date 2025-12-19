@@ -1,4 +1,3 @@
-
 'use client'
 
 import { CMSLink } from '@/components/Link'
@@ -11,67 +10,64 @@ interface HeadProps {
     }
     Navigation?: {
         label: string
-        linkType?: ('reference' | 'custom') | null
+        linkType?: 'reference' | 'custom' | null
         page?: Page | number | null
         url?: string | null
     }[]
 }
 
 export const Head: React.FC<HeadProps> = ({ logo, Navigation }) => {
-    // console.log(logo)
-    // console.log(Navigation)
-
     return (
-        <>
-            <header className="w-full border-b bg-white  fixed  text-white -mt-[140px] ">
-                <div className="mx-auto max-w-7xl px-4">
-                    <div className="flex h-16 items-center justify-between">
-                        <div className="flex items-center">
-                            <img
-                                src={logo?.url}
-                                alt={logo?.alt || 'Logo'}
-                                className="h-10 w-auto object-contain"
+        <header className="w-full border-b bg-white fixed top-0 z-50">
+            <div className="mx-auto max-w-7xl px-4">
+                <div className="flex h-16 items-center justify-between">
+
+
+                    <img
+                        src={logo?.url}
+                        alt={logo?.alt || 'Logo'}
+                        className="h-10 w-auto"
+                    />
+
+
+                    <nav className="hidden md:flex items-center gap-8">
+                        {Navigation?.map((item, index) => (
+                            <CMSLink
+                                key={index}
+                                label={item.label}
+                                type={item.linkType}
+                                url={item.url}
+                                reference={
+                                    item.linkType === 'reference' && item.page
+                                        ? { relationTo: 'pages', value: item.page }
+                                        : null
+                                }
+                                className="text-md font-medium text-gray-700 hover:text-black transition"
                             />
-                        </div>
-
-                        <nav className="hidden md:flex items-center gap-8">
-                            {Navigation?.map((item, index) => (
-                                <CMSLink
-                                    key={index}
-                                    label={item.label}
-                                    type={item.linkType}
-                                    url={item.url}
-                                    reference={
-                                        item.linkType === 'reference' && item.page
-                                            ? { relationTo: 'pages', value: item.page }
-                                            : null
-                                    }
-                                    className="text-md font-medium text-gray-700 hover:text-black transition"
-                                />
-                            ))}
-                        </nav>
-                    </div>
-
-                    <div className="md:hidden pb-4">
-                        <nav className="flex flex-col gap-4">
-                            {Navigation?.map((item, index) => (
-                                <CMSLink
-                                    key={index}
-                                    label={item.label}
-                                    type={item.linkType}
-                                    url={item.url}
-                                    reference={
-                                        item.linkType === 'reference' && item.page
-                                            ? { relationTo: 'pages', value: item.page }
-                                            : null
-                                    }
-                                    className="text-sm font-medium text-gray-700 hover:text-black"
-                                />
-                            ))}
-                        </nav>
-                    </div>
+                        ))}
+                    </nav>
                 </div>
-            </header>
-        </>
+
+                {/* Mobile Menu */}
+                <div className="md:hidden pb-4">
+                    <nav className="flex flex-col gap-4">
+                        {Navigation?.map((item, index) => (
+                            <CMSLink
+                                key={index}
+                                label={item.label}
+                                type={item.linkType}
+                                url={item.url}
+                                reference={
+                                    item.linkType === 'reference' && item.page
+                                        ? { relationTo: 'pages', value: item.page }
+                                        : null
+                                }
+                                className="text-sm font-medium text-gray-700 hover:text-black"
+                            />
+                        ))}
+                    </nav>
+                </div>
+            </div>
+        </header>
     )
 }
