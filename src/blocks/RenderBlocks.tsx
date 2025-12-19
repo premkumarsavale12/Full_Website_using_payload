@@ -16,6 +16,7 @@ import { FAQ } from '@/blocks/FAQ/Component'
 import { Conten } from '@/blocks/Conten/Component'
 import { Down } from '@/blocks/Down/Component'
 import { Head } from '@/blocks/Head/Component'
+import { Logo } from '@/blocks/Logo/Component'
 
 
 const blockComponents = {
@@ -32,7 +33,8 @@ const blockComponents = {
   faq: FAQ,
   conten: Conten,
   down: Down,
-  head: Head
+  head: Head,
+  logo: Logo
 
 }
 

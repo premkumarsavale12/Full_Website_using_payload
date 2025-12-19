@@ -215,6 +215,7 @@ export interface Page {
     | Conten
     | Down
     | Head
+    | Logo
   )[];
   meta?: {
     title?: string | null;
@@ -1010,6 +1011,23 @@ export interface Head {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "logo".
+ */
+export interface Logo {
+  heading?: string | null;
+  Paragraph?: string | null;
+  Logo?:
+    | {
+        Images: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'logo';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1325,6 +1343,7 @@ export interface PagesSelect<T extends boolean = true> {
         conten?: T | ContenSelect<T>;
         down?: T | DownSelect<T>;
         head?: T | HeadSelect<T>;
+        logo?: T | LogoSelect<T>;
       };
   meta?:
     | T
@@ -1584,6 +1603,22 @@ export interface HeadSelect<T extends boolean = true> {
         linkType?: T;
         page?: T;
         url?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "logo_select".
+ */
+export interface LogoSelect<T extends boolean = true> {
+  heading?: T;
+  Paragraph?: T;
+  Logo?:
+    | T
+    | {
+        Images?: T;
         id?: T;
       };
   id?: T;

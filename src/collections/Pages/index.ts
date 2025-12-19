@@ -21,7 +21,7 @@ import { FAQ } from '../../blocks/FAQ/config'
 import { Conten } from '../../blocks/Conten/config'
 import { Down } from '../../blocks/Down/config'
 import { Head } from '../../blocks/Head/config'
-
+import { Logo } from '../../blocks/Logo/config'
 
 
 import {
@@ -81,7 +81,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, MediBlock, VideoBlock, Right, Slider, Partner, FAQ, Conten, Down, Head],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, MediBlock, VideoBlock, Right, Slider, Partner, FAQ, Conten, Down, Head, Logo],
               required: true,
               admin: {
                 initCollapsed: true,
