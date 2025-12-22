@@ -1,9 +1,10 @@
 import RichText from "@/components/RichText";
+import { type DefaultTypedEditorState } from '@payloadcms/richtext-lexical';
 
 interface FAQProps {
     items?: {
         Question: string;
-        richText: any
+        richText: DefaultTypedEditorState
     }[],
 
     Heading?: string | null;
@@ -16,9 +17,9 @@ export const FAQ: React.FC<FAQProps> = ({ items = [], Heading }) => {
     return (
 
         <>
-        <h1  className="text-black text-center  text-large font-bold mb-[20px]" > { Heading }</h1>
+            <h1 className="text-black text-center  text-large font-bold mb-[20px]" > {Heading}</h1>
             {
-                items?.map((item: any, index: number) => {
+                items?.map((item, index) => {
 
                     return (
 
@@ -54,7 +55,7 @@ export const FAQ: React.FC<FAQProps> = ({ items = [], Heading }) => {
 
                         <div className="w-full flex justify-center" key={index}>
                             <div
-                                key={item.index}
+                                key={index}
                                 className="w-[70%] md:w-[60%] lg:w-[50%] 
                                 group p-6 bg-white border border-blue-200 rounded-xl 
                                 hadow-md hover:shadow-xl hover:border-blue-500 

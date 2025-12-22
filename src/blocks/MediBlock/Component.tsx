@@ -1,33 +1,32 @@
 
-
+import Image from "next/image";
 
 interface MediBlockProps {
 
-    Image: {
+    image: {
 
         url: string;
         alt: string;
-        width: number;
-        height: number;
-
 
     }
 }
 
 
 
-export const MediBlock: React.FC<MediBlockProps> = ({ Image }) => {
+export const MediBlock: React.FC<MediBlockProps> = ({ image }) => {
     // console.log(Image);
 
     return (
 
         <>
             {
-                Image && (
+                image && (
 
-                    <img
-                        src={Image.url}
-                        alt={Image.alt}
+                    <Image
+                        src={image.url}
+                        alt={image.alt}
+                        height={400}
+                        width={500}
                         className="mx-auto w-[80%]"
                     />
                 )

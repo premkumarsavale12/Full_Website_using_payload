@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useRef } from "react";
+import Image from "next/image";
 
 
 interface LogoProps {
@@ -15,10 +16,10 @@ interface LogoProps {
     | {
 
         Images: {
-            url: any,
-            alt: any
+            url: string,
+            alt: string
         }
-        id?: string | null;
+        id?: number;
     }[]
 }
 
@@ -110,10 +111,12 @@ export const Logo: React.FC<LogoProps> = ({ heading, Logo, Paragraph }) => {
                             <SwiperSlide key={item.id}>
                                 <div className="flex justify-center items-center bg-white p-4 h-32 w-full">
                                     <div className="relative w-full h-full max-w-[150px] max-h-[100px]">
-                                        <img
+                                        <Image
                                             key={item.id ?? index}
                                             src={item.Images.url}
                                             alt={item.Images.alt}
+                                            height={100}
+                                            width={400}
                                         />
                                     </div>
                                 </div>

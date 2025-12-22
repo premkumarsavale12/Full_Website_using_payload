@@ -1,8 +1,5 @@
 
 import Image from 'next/image'
-// import location from '../../../public/location-black_icon.svg'
-// import call from '../../../public/call-black_icon.svg'
-// import mail from '../../../public/mail-black_icon.svg'
 interface DownProps {
 
 
@@ -38,10 +35,10 @@ interface DownProps {
     socialMedia?:
     {
         icon?: {
-            url: any,
-            alt: any
+            url: string,
+            alt: string
         }
-        id?: string | null;
+        id?: number,
     }[],
 }
 
@@ -78,10 +75,12 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
                                             {contact.street && <p>{contact.street}</p>}
 
                                             <p className="flex items-center gap-2">
-                                                <img
+                                                <Image
                                                     src="/location-black_icon.svg"
                                                     alt="location"
                                                     className="w-6 h-6 "
+                                                    width={"0"}
+                                                    height={"0"}
                                                 />
                                                 <span>
                                                     {contact.zipCity} {contact.country}
@@ -92,9 +91,11 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
 
                                     {contact.email && (
                                         <p className="pt-2 flex items-center gap-2">
-                                            <img
+                                            <Image
                                                 src="/mail-black_icon.svg"
                                                 alt="email"
+                                                height="0"
+                                                width="0"
                                                 className="w-6 h-6"
                                             />
                                             <a
@@ -108,10 +109,12 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
 
                                     {contact.phone && (
                                         <p className="flex items-center gap-2">
-                                            <img
+                                            <Image
                                                 src="/call-black_icon.svg"
                                                 alt="phone"
                                                 className="w-6 h-6"
+                                                height={"0"}
+                                                width={"0"}
                                             />
                                             <a
                                                 href={`tel:${contact.phone}`}

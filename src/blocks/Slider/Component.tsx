@@ -6,13 +6,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from 'swiper/modules';
 import type { Media } from "@/payload-types";
+import { type DefaultTypedEditorState } from '@payloadcms/richtext-lexical';
+import Image from "next/image";
 
 
 interface SliderProps {
     media?: {
         Images: string | Media;
         id?: string | null;
-        richText?: any;
+        richText?: DefaultTypedEditorState;
         pageURL: string;
     }[]
 }
@@ -60,9 +62,11 @@ export const Slider: React.FC<SliderProps> = ({ media = [] }) => {
                                     <div
                                         onClick={() => window.open(item.pageURL, '_blank')}
                                         className="w-full h-full rounded-xl overflow-hidden relative group cursor-pointer">
-                                        <img
+                                        <Image
                                             src={image.url}
                                             alt={image.alt || "Slider Image"}
+                                            height={300}
+                                            width={500}
                                             className="w-full h-full object-cover
                            group-hover:scale-105 transition-transform duration-300"
                                         />

@@ -1,5 +1,4 @@
 import { FixedToolbarFeature, HeadingFeature, InlineToolbarFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
-import { Label } from "@radix-ui/react-select";
 import { Block } from "payload";
 
 

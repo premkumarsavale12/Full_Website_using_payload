@@ -1,4 +1,5 @@
 import RichText from "@/components/RichText";
+import { type DefaultTypedEditorState } from '@payloadcms/richtext-lexical';
 
 import React from "react";
 
@@ -8,11 +9,13 @@ interface VideoBlockProps {
         url: string;
         mimeType?: string;
 
+
     },
-
-    richText: any,
-    Paragraph?: any,
-
+    richText: DefaultTypedEditorState,
+    Paragraph?: {
+        Point: string;
+        id?: string;
+    }[],
 }
 
 
@@ -44,14 +47,12 @@ export const VideoBlock: React.FC<VideoBlockProps> = ({ Video, richText, Paragra
 
                 <div className="absolute inset-0 flex items-center justify-center text-white p-4 mt-[230px]">
                     <ul className="list-disc pl-5 space-y-4 text-white" >
-                        {Paragraph?.map((item: any, index: number) => (
-                            <li key={index}>{item.Point}</li>
+                        {Paragraph?.map((item, index) => (
+                            <li key={item.id || index}>{item.Point}</li>
                         ))}
                     </ul>
                 </div>
             </div>
-
-
 
         </>
     )

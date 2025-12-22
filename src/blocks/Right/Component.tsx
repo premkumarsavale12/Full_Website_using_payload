@@ -1,13 +1,16 @@
 
 import RichText from "@/components/RichText";
 import { Button } from "@payloadcms/ui";
+import type { Media as MediaType } from "@/payload-types";
+import { type DefaultTypedEditorState } from '@payloadcms/richtext-lexical';
 import { Media } from "@/components/Media";
 
 interface RightProps {
     item?: {
-        richText: any,
-        Images: any,
-
+        richText: DefaultTypedEditorState,
+        Images: MediaType,
+        label: string,
+        url: string,
     }[],
 
 
@@ -26,7 +29,7 @@ export const Right: React.FC<RightProps> = ({ item = [] }) => {
 
                 <div className="flex flex-col gap-10">
 
-                    {item.map((data: any, index: number) => {
+                    {item.map((data, index) => {
 
                         // console.log(data);
 

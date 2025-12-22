@@ -800,7 +800,7 @@ export interface Form {
  * via the `definition` "mediBlock".
  */
 export interface MediBlock {
-  Image: number | Media;
+  image: number | Media;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediBlock';
@@ -1448,7 +1448,7 @@ export interface FormBlockSelect<T extends boolean = true> {
  * via the `definition` "mediBlock_select".
  */
 export interface MediBlockSelect<T extends boolean = true> {
-  Image?: T;
+  image?: T;
   id?: T;
   blockName?: T;
 }

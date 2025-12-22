@@ -1,7 +1,7 @@
 import { Block } from "payload";
 
 
-export const MediBlock: Block = { 
+export const MediBlock: Block = {
 
     slug: 'mediBlock',
     interfaceName: 'mediBlock',
@@ -13,7 +13,7 @@ export const MediBlock: Block = {
     fields: [
         {
 
-            name: 'Image',
+            name: 'image',
             type: 'upload',
             label: 'Image Upload',
             relationTo: 'media',

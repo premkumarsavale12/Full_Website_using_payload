@@ -1,7 +1,7 @@
 'use client'
-
 import { CMSLink } from '@/components/Link'
 import type { Page } from '@/payload-types'
+import Image from 'next/image'
 
 interface HeadProps {
     logo: {
@@ -23,10 +23,12 @@ export const Head: React.FC<HeadProps> = ({ logo, Navigation }) => {
                 <div className="flex h-16 items-center justify-between">
 
 
-                    <img
+                    <Image
                         src={logo?.url}
                         alt={logo?.alt || 'Logo'}
                         className="h-10 w-auto"
+                        height={50}
+                        width={60}
                     />
 
 
