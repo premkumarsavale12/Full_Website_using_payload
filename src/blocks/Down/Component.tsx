@@ -138,9 +138,9 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
 
                                 <ul className="space-y-2 text-sm">
 
-                                    {officeHourse.map((oh) => (
+                                    {officeHourse.map((oh, index) => (
 
-                                        <li key={oh.id} className="flex justify-between max-w-[200px]">
+                                        <li key={index} className="flex justify-between max-w-[200px]">
 
                                             <span className="font-medium">{oh.days}</span>
 
@@ -162,8 +162,8 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
 
                                 <nav>
                                     <ul className="space-y-2 text-sm">
-                                        {navigation.map((nav) => (
-                                            <li key={nav.id}>
+                                        {navigation.map((nav, index) => (
+                                            <li key={index}>
                                                 <a
                                                     href={nav.url || '#'}
                                                     className="hover:text-white transition-colors duration-200 flex items-center gap-2"
@@ -182,8 +182,8 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
                             <div className="space-y-4">
                                 <h3 className="text-lg font-semibold text-white mb-4">Legal</h3>
                                 <ul className="space-y-2 text-sm">
-                                    {legalLinks.map((link) => (
-                                        <li key={link.id}>
+                                    {legalLinks.map((link, index) => (
+                                        <li key={index}>
                                             <a
                                                 href={link.url || '#'}
                                                 className="hover:text-white transition-colors duration-200"
@@ -207,9 +207,9 @@ export const Down: React.FC<DownProps> = ({ contact, officeHourse, navigation, l
                                     <ul className="flex items-center gap-4">
 
                                         {
-                                            socialMedia.map((data) => (
+                                            socialMedia.map((data, index) => (
 
-                                                <li key={data.id}>
+                                                <li key={index}>
 
                                                     {data.icon && typeof data.icon === 'object' && data.icon.url && (
                                                         <Image

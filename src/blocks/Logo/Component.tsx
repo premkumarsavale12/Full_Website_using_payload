@@ -108,11 +108,11 @@ export const Logo: React.FC<LogoProps> = ({ heading, Logo, Paragraph }) => {
                     {Logo &&
                         Logo.map((item, index) => (
 
-                            <SwiperSlide key={item.id}>
+                            <SwiperSlide key={index}>
                                 <div className="flex justify-center items-center bg-white p-4 h-32 w-full">
                                     <div className="relative w-full h-full max-w-[150px] max-h-[100px]">
                                         <Image
-                                            key={item.id ?? index}
+                                            key={index}
                                             src={item.Images.url}
                                             alt={item.Images.alt}
                                             height={100}

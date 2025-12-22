@@ -87,7 +87,7 @@ export const Partner: React.FC<PartnerBlock> = ({ Partner }) => {
 
                         if (file && typeof file === "object" && "url" in file && file.url) {
                             return (
-                                <SwiperSlide key={item.id ?? index}>
+                                <SwiperSlide key={index}>
                                     <div className="flex justify-center items-center bg-white p-4 h-32 w-full">
                                         <div className="relative w-full h-full max-w-[150px] max-h-[100px]">
                                             <Image

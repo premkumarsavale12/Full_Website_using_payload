@@ -58,7 +58,7 @@ export const Slider: React.FC<SliderProps> = ({ media = [] }) => {
 
                         if (image && typeof image === "object" && "url" in image && image.url) {
                             return (
-                                <SwiperSlide key={item.id ?? index}>
+                                <SwiperSlide key={index}>
                                     <div
                                         onClick={() => window.open(item.pageURL, '_blank')}
                                         className="w-full h-full rounded-xl overflow-hidden relative group cursor-pointer">

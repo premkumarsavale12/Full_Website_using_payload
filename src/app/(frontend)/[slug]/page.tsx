@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 
   const params = pages.docs
     ?.filter((doc) => {
-      return doc.slug !== 'demo'
+      return doc.slug !== 'simple'
     })
     .map(({ slug }) => {
       return { slug }
@@ -40,12 +40,12 @@ export async function generateStaticParams() {
 type Args = {
   params: Promise<{
     slug?: string
-  }>
+  }> 
 }
 
 export default async function Page({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode()
-  const { slug = 'demo' } = await paramsPromise
+  const { slug = 'simple' } = await paramsPromise
   // Decode to support slugs with special characters
   const decodedSlug = decodeURIComponent(slug)
   const url = '/' + decodedSlug
@@ -56,7 +56,7 @@ export default async function Page({ params: paramsPromise }: Args) {
   })
 
   // Remove this code once your website is seeded
-  if (!page && slug === 'demo') {
+  if (!page && slug === 'simple') {
     page = homeStatic
   }
 
@@ -81,7 +81,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 }
 
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-  const { slug = 'demo' } = await paramsPromise
+  const { slug = 'simple' } = await paramsPromise
   // Decode to support slugs with special characters
   const decodedSlug = decodeURIComponent(slug)
   const page = await queryPageBySlug({

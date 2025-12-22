@@ -48,7 +48,7 @@ export const VideoBlock: React.FC<VideoBlockProps> = ({ Video, richText, Paragra
                 <div className="absolute inset-0 flex items-center justify-center text-white p-4 mt-[230px]">
                     <ul className="list-disc pl-5 space-y-4 text-white" >
                         {Paragraph?.map((item, index) => (
-                            <li key={item.id || index}>{item.Point}</li>
+                            <li key={index}>{item.Point}</li>
                         ))}
                     </ul>
                 </div>
